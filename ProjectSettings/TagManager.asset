@@ -1,0 +1,92 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!78 &1
+TagManager:
+  serializedVersion: 2
+  tags:
+  - Fire
+  - FallingPlat
+  - FaultyPlat
+  - NewPlayer
+  layers:
+  - Default
+  - TransparentFX
+  - Ignore Raycast
+  - 
+  - Water
+  - UI
+  - 
+  - 
+  - Player
+  - Ground
+  - Ladder
+  - Hazards
+  - Enemies
+  - Lift
+  - Lift Structure
+  - Trigger Box
+  - Trigger Mechanism
+  - Background
+  - Rotating Gear
+  - Rising Water
+  - Falling Platform
+  - Fall
+  - NewPlayer
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  m_SortingLayers:
+  - name: Default
+    uniqueID: 0
+    locked: 0
+  - name: Background
+    uniqueID: 3182608071
+    locked: 0
+  - name: Ladder
+    uniqueID: 1692320291
+    locked: 0
+  - name: Hazards
+    uniqueID: 1173571621
+    locked: 0
+  - name: Rising Water
+    uniqueID: 2413736773
+    locked: 0
+  - name: Enemies
+    uniqueID: 3788561525
+    locked: 0
+  - name: Trigger Mechanism
+    uniqueID: 2321656397
+    locked: 0
+  - name: Trigger Box
+    uniqueID: 4093779469
+    locked: 0
+  - name: Level Exit
+    uniqueID: 2298871855
+    locked: 0
+  - name: Player
+    uniqueID: 2687823879
+    locked: 0
+  - name: NewPlayer
+    uniqueID: 3335514877
+    locked: 0
+  - name: Lift Structure
+    uniqueID: 585203311
+    locked: 0
+  - name: Lift
+    uniqueID: 1258666769
+    locked: 0
+  - name: Falling Platform
+    uniqueID: 3800245869
+    locked: 0
+  - name: Foreground
+    uniqueID: 2765787729
+    locked: 0
+  - name: Interactables
+    uniqueID: 3603629743
+    locked: 0

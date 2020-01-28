@@ -1,0 +1,97 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class Lift_Movement : MonoBehaviour
+{
+    [SerializeField] float liftSpeed = 1f;
+    [SerializeField] float liftWaitTime = 5f;
+    Rigidbody2D myRigidbody;
+
+    void Start()
+    {
+        myRigidbody = GetComponent<Rigidbody2D>();
+        StartCoroutine(LiftPause());
+    }
+
+    void Update()
+    {
+       
+    }
+
+    // what I need in order to make the lift do what I want it to do:
+    // set velocity to liftSpeed > let that run for X seconds or X distance > set velocity to Zero for X Seconds > set velocity to liftSpeed > OnTriggerExit2D
+    // in Player script for Laser Defender: the coroutine is combined with a while loop so that the GetButtonDown ncommand repeayts the fire action
+    // > to stop that while loop - a handle is applied to the *whole coroutine* of firing coroutine & > StopCoroutine is applied ot that coroutine 
+    // so here we have a button input that starts the coroutine > the coroutine instantiates a laser & gives it y velocity > a *while (true)* envelope is applied to allow the laser instantiation
+    // to loop once the button has been pressed > to have a mechanism to stop the laser firing, an *if (GetButtonDown)* & *if(GetButtonUp)* is applied along with *StopCoroutine(firingCoroutine)*
+    //so to relate that back to its basic principles & ktry to apply it to my lift situation:
+    // the coroutine is initiated by a button press > a while and yield surround instantiation of a gameobject & allow it to repeat > raising the button is used to stop the coroutine
+    // for the lift - I need to apply a velocity > 
+
+
+
+    IEnumerator LiftPause()
+    {
+        // the example in Laser Defender is for distinct action of shooting lasers - in this script I have to change velocity (continuous movement) to zero and then set the velocity to 
+        // liftSpeed again
+        myRigidbody.velocity = new Vector2(0f, liftSpeed);
+        yield return new WaitForSeconds(liftWaitTime);
+        void OnTriggerExit2D(Collider2D collision)
+        {
+            myRigidbody.velocity = new Vector2(0f, 0f);
+        }
+    }
+
+    
+}
+
+
+
+
+
+/* 
+ *  void Update()
+    {
+        if (isFacingUp())
+        {
+            myRigidbody.velocity = new Vector2(0f, liftSpeed);
+        }
+        else
+        {
+            myRigidbody.velocity = new Vector2(0f, -liftSpeed);
+        }
+    }
+
+    bool isFacingUp()
+    {
+        return transform.localScale.y > 0;
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        transform.localScale = new Vector2(1f, -(Mathf.Sign(myRigidbody.velocity.y)));
+    }
+ */
+
+
+
+/*
+    [SerializeField] float moveSpeed = 1f;
+    Rigidbody2D myRigidbody;
+    Vector2 LiftSpeed = new Vector2(0f, moveSpeed);
+
+    void Start()
+    {
+        myRigidbody = GetComponent<Rigidbody2D>();
+        myRigidbody.velocity = LiftSpeed;
+    }
+
+     void Update()
+    {
+        void OnTriggerExit2D(Collider2D collision)
+        {
+            LiftSpeed = new Vector2(0f, -1f * moveSpeed);
+            myRigidbody.velocity = LiftSpeed;
+        }
+    } */
