@@ -8,6 +8,7 @@ public class GameSession : MonoBehaviour
 {
     int playerLives = 10;
     [SerializeField] Text livesText;
+    AsyncOperation asyncOperation;
 
     void Awake()
     {
@@ -42,9 +43,19 @@ public class GameSession : MonoBehaviour
     private void TakeLife()
     {
         playerLives--;
-        var currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
-        SceneManager.LoadScene(currentSceneIndex);
+        StartCoroutine(ReloadCurrentLevel());
+        
         livesText.text = playerLives.ToString();
+    }
+
+    private IEnumerator ReloadCurrentLevel()
+    {
+        var currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
+        var currentSceneReloaded = currentSceneIndex;
+        asyncOperation = SceneManager.LoadSceneAsync(currentSceneReloaded, LoadSceneMode.Additive);
+        asyncOperation.allowSceneActivation = true;
+        yield return asyncOperation;
+        SceneManager.UnloadSceneAsync(currentSceneIndex);
     }
 
     private void ResetGameSession()
@@ -58,3 +69,12 @@ public class GameSession : MonoBehaviour
         Destroy(gameObject);
     }
 }
+
+
+/*private void TakeLife()
+    {
+        playerLives--;
+        var currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
+        SceneManager.LoadScene(currentSceneIndex);
+        livesText.text = playerLives.ToString();
+    }*/

@@ -8,6 +8,7 @@ TagManager:
   - FallingPlat
   - FaultyPlat
   - NewPlayer
+  - Through
   layers:
   - Default
   - TransparentFX
@@ -32,9 +33,9 @@ TagManager:
   - Falling Platform
   - Fall
   - NewPlayer
-  - 
-  - 
-  - 
+  - Ladder1
+  - Hazards1
+  - RisingWater1
   - 
   - 
   - 
@@ -51,11 +52,20 @@ TagManager:
   - name: Ladder
     uniqueID: 1692320291
     locked: 0
+  - name: Ladder1
+    uniqueID: 3091547263
+    locked: 0
   - name: Hazards
     uniqueID: 1173571621
     locked: 0
+  - name: Hazards1
+    uniqueID: 1287101861
+    locked: 0
   - name: Rising Water
     uniqueID: 2413736773
+    locked: 0
+  - name: RisingWater1
+    uniqueID: 2983438131
     locked: 0
   - name: Enemies
     uniqueID: 3788561525

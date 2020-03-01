@@ -17,7 +17,12 @@ public class FallingPlat : MonoBehaviour
         myRigidbody = GetComponent<Rigidbody2D>();
     }
 
-    private IEnumerator OnCollisionEnter2D(Collision2D collision)
+    public void FallingPlatTriggered()
+    {
+        Destroy(gameObject);
+    }
+    
+    /*public IEnumerator FallingPlatTriggered()
     {
         if (tag == "FallingPlat")
         {
@@ -27,7 +32,7 @@ public class FallingPlat : MonoBehaviour
         }
     }
 
-    private IEnumerator PlatFall()
+    public IEnumerator PlatFall()
     {
         if (isFalling)
         {
@@ -36,10 +41,10 @@ public class FallingPlat : MonoBehaviour
         }
     }
 
-    private IEnumerator PlatShrink()
+    public IEnumerator PlatShrink()
     {
         myRigidbody.transform.localScale = new Vector2(firstShrink, 1f);
         yield return new WaitForSeconds(secondDelay);
         myRigidbody.velocity = new Vector2(0f, fallSpeed);
-    }
+    }*/
 }

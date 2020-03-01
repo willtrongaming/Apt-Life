@@ -5,7 +5,7 @@ using UnityEngine;
 public class RisingWater : MonoBehaviour
 {
     float riseRate = 0.2f;
-    float turboRiseRate = 2f;
+    float turboRiseRate = 1.5f;
 
     public void WaterMovement()
     {
