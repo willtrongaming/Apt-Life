@@ -9,8 +9,6 @@ public class RaycastController : MonoBehaviour
 {
     public LayerMask collisionMask;
 
-    // we Keep the "public" designation despite using [HideInInspector] bc these variables need to be classified
-    // as public in order to be accessed by other scripts that require these variables
     [HideInInspector]
     public const float skinWidth = 0.015f;
     public const float distBetweenRays = .175f;
@@ -68,3 +66,6 @@ public class RaycastController : MonoBehaviour
         public Vector2 bottomLeft, bottomRight;
     }
 }
+
+// we Keep the "public" designation despite using [HideInInspector] bc these variables need to be classified
+// as public in order to be accessed by other scripts that require these variables

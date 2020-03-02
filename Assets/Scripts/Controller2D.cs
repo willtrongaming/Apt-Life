@@ -78,8 +78,6 @@ public class Controller2D : RaycastController
         }
     }
 
-    // making the moveAmount Vector2 a "ref" bc now any changes that are made to moveAmount in the VerticalCollisions() will now be reflected in the above 
-    // ref moveAmount of the Move()
     public void VerticalCollisions(ref Vector2 moveAmount)
     {
         float directionY = Mathf.Sign(moveAmount.y);
@@ -141,5 +139,8 @@ public class Controller2D : RaycastController
             left = right = false;
         }
     }
-
 }
+
+
+// making the moveAmount Vector2 a "ref" bc now any changes that are made to moveAmount in the VerticalCollisions() will now be reflected in the above 
+// ref moveAmount of the Move()

@@ -12,8 +12,6 @@ public class PlayerInput : Controller2D
     float jumpBufferTime = 0.15f;
 
     float groundedMemory;
-    //Old Value
-    /*float groundedBufferTime = 0.155f;*/
     float groundedBufferTime = 0.132f;
 
     void Start()
@@ -37,8 +35,6 @@ public class PlayerInput : Controller2D
         if (Input.GetKeyDown(KeyCode.Space))
         {
             jumpPressedMemory = jumpBufferTime;
-            
-            // bufferCounter = 0;
         }
 
         if (Input.GetKeyUp(KeyCode.Space))
@@ -54,3 +50,9 @@ public class PlayerInput : Controller2D
         }
     }
 }
+
+//Old Value
+/*float groundedBufferTime = 0.155f;*/
+
+
+// bufferCounter = 0;

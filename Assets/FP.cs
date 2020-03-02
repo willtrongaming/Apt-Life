@@ -43,6 +43,7 @@ public class FP : MonoBehaviour
 }
 
 
+
 /*float destroyDelay = 5f;*/
 
 /*public IEnumerator PlatShrink()

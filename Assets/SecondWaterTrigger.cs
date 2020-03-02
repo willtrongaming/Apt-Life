@@ -17,9 +17,10 @@ public class SecondWaterTrigger : MonoBehaviour
     { 
         FindObjectOfType<RisingWater>().TurboTime();
         GameObject HurryUpText = Instantiate(popUpText2, textPosition2, Quaternion.identity) as GameObject;
-        /*Destroy(HurryUpText, destroyDelay);*/
     }
 }
+
+
 
 /* bool textTriggered = false;
  * public void OnTriggerEnter2D(Collider2D other)
@@ -37,3 +38,5 @@ public class SecondWaterTrigger : MonoBehaviour
     {
         textTriggered = false;
     }*/
+
+/*Destroy(HurryUpText, destroyDelay);*/
